@@ -1,81 +1,90 @@
-Creating a well-structured README file is essential for any software project, as it serves as the first point of contact for users and contributors. Here’s a comprehensive guide on how to craft an effective README file based on best practices and common components.
-
-### Components of a Good README File
-
-1. **Project Title**
-   - Clearly state the name of your project at the top of the README.
-
-2. **Project Description**
-   - Provide a brief overview of what your project does, its purpose, and why it exists. Explain what makes it unique or valuable.
-
-3. **Table of Contents (Optional)**
-   - If your README is lengthy, consider adding a table of contents to help users navigate easily.
-
-4. **Installation Instructions**
-   - Detail how to install and set up your project. Include prerequisites, dependencies, and step-by-step instructions.
-
-5. **Usage Instructions**
-   - Explain how to use your project after installation. Provide examples, commands, or screenshots to illustrate usage.
-
-6. **Features**
-   - List the main features of your project to highlight its capabilities.
-
-7. **Contributing**
-   - Include guidelines for how others can contribute to your project. This can include coding standards, submission processes, and links to relevant documents.
-
-8. **License**
-   - Specify the license under which your project is distributed. This informs users about their rights regarding the code.
-
-9. **Acknowledgments**
-   - Recognize any contributors, libraries, or resources that helped you in the development of the project.
-
-10. **Contact Information**
-    - Provide ways for users to reach you for questions or feedback (e.g., email, GitHub profile).
-
-### Example README Template
-
-Here’s a sample template you can use as a starting point:
+**Twitter Prediction Market**
 
 ```markdown
-# Project Title
+# Twitter Prediction Market
 
 ## Description
-A brief description of what your project does and its purpose.
+The **Twitter Prediction Market** is a decentralized application that allows users to create tweets, invest in them, and analyze their sentiment. By integrating social media interaction with blockchain technology, users can engage with content while also participating in a financial market based on public opinion.
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [Contact Information](#contact-information)
 
 ## Installation
+To set up the project locally, follow these steps:
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/project-name.git
+   git clone https://github.com/sumitdoke/TweetBet.git
    ```
-2. Navigate into the directory:
+
+2. Navigate to the project directory:
    ```bash
-   cd project-name
+   cd TweetBet
    ```
-3. Install dependencies:
+
+3. Install the dependencies:
    ```bash
    npm install
    ```
 
+4. Create a `.env` file in the root directory and add your Twitter API credentials and smart contract address:
+   ```
+   TWITTER_API_KEY=your_api_key_here
+   TWITTER_API_SECRET=your_api_secret_here
+   TWITTER_ACCESS_TOKEN=your_access_token_here
+   TWITTER_ACCESS_SECRET=your_access_secret_here
+   CONTRACT_ADDRESS=your_contract_address_here
+   ```
+
 ## Usage
-Provide examples of how to use your project:
-```bash
-npm start
-```
-Include screenshots or command outputs if applicable.
+1. Start the server:
+   ```bash
+   node src/server.js
+   ```
+
+2. Open your web browser and navigate to `http://localhost:3000`.
+
+3. Use the application to:
+   - Create tweets by entering content and submitting the form.
+   - Invest in existing tweets by entering the tweet ID and investment amount.
+   - Fetch tweets from Twitter by entering a hashtag.
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+- **Create Tweets**: Users can submit tweets, which are analyzed for sentiment before being stored on the blockchain.
+- **Invest in Tweets**: Users can invest Ether in tweets, allowing them to participate in the market based on their predictions of tweet performance.
+- **Fetch Tweets from Twitter**: Users can search for and display tweets from Twitter based on specific hashtags.
+- **Sentiment Analysis**: Each tweet includes a sentiment score, providing insights into public sentiment.
+
+## Technologies Used
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Node.js, Express.js
+- **Blockchain**: Ethereum (using Web3.js)
+- **Twitter API**: twitter-api-v2 for fetching tweets
+- **Sentiment Analysis**: vader-sentiment library for analyzing tweet content
+
+## Project Structure
+```
+twitter-prediction-market/
+├── src/
+│   ├── public/
+│   │   ├── index.html           # Main HTML file
+│   │   ├── styles.css           # CSS file for styling
+│   │   └── app.js               # Frontend JavaScript
+│   ├── twitterClient.js          # Twitter API client
+│   ├── sentimentAnalysis.js       # Sentiment analysis module
+│   └── server.js                 # Express server setup
+├── package.json                  # Project metadata and dependencies
+├── .env                          # Environment variables (not tracked by Git)
+└── .gitignore                    # Files and directories ignored by Git
+```
 
 ## Contributing
 1. Fork the repository.
@@ -89,11 +98,12 @@ Include screenshots or command outputs if applicable.
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
-- Thanks to [Contributor Name] for their contributions.
-- Inspired by [Resource Name].
+- Special thanks to [Twitter Developer](https://developer.twitter.com/) for providing access to their API.
+- Thanks to [OpenZeppelin](https://openzeppelin.com/) for their smart contract templates and security best practices.
 
 ## Contact Information
 For questions or feedback, contact me at:
-- Email: your_email@example.com
-- GitHub: [yourusername](https://github.com/yourusername)
+- Email: sumitdoke@example.com (replace with your actual email)
+- GitHub: [sumitdoke](https://github.com/sumitdoke)
+
 ```
