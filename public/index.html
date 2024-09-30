@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Prediction Market</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Twitter Prediction Market</h1>
+            <nav>
+                <ul>
+                    <li><a href="#create-tweet">Create Tweet</a></li>
+                    <li><a href="#invest-tweet">Invest in Tweet</a></li>
+                    <li><a href="#fetch-tweets">Fetch Tweets</a></li>
+                    <li><a href="#tweets-list">View Tweets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Create Tweet Section -->
+        <section id="create-tweet">
+            <h2>Create a New Tweet</h2>
+            <form id="tweetForm">
+                <textarea id="tweetContent" placeholder="Enter your tweet content here..." required></textarea>
+                <button type="submit">Create Tweet</button>
+            </form>
+        </section>
+
+        <!-- Invest in Tweet Section -->
+        <section id="invest-tweet">
+            <h2>Invest in a Tweet</h2>
+            <form id="investmentForm">
+                <input type="number" id="tweetId" placeholder="Tweet ID" required min="1">
+                <input type="number" id="investmentAmount" placeholder="Investment Amount (ETH)" required step="0.01" min="0.01">
+                <button type="submit">Invest</button>
+            </form>
+        </section>
+
+        <!-- Fetch Tweets Section -->
+        <section id="fetch-tweets">
+            <h2>Fetch Tweets by Hashtag</h2>
+            <form id="fetchTweetsForm">
+                <input type="text" id="hashtagInput" placeholder="Enter hashtag (without #)" required>
+                <button type="submit">Fetch Tweets</button>
+            </form>
+            <div id="fetchedTweetsContainer"></div> <!-- Container for displaying fetched tweets -->
+        </section>
+
+        <!-- Active Tweets Section -->
+        <section id="tweets-list">
+            <h2>Active Tweets</h2>
+            <div id="tweetsContainer"></div> <!-- Container for displaying active tweets -->
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2024 Twitter Prediction Market. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
