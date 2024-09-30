@@ -1,6 +1,3 @@
-**Twitter Prediction Market**
-
-```markdown
 # Twitter Prediction Market
 
 ## Description
